@@ -1,16 +1,18 @@
 <a
     href="#"
     (click)="onSelected()"
-    class="list-group-item clearfix">
-    <div class="pull-left">
-        <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
-        <p class="list-group-item-text">{{ recipe.description }}</p>
-    </div>
-    <span class="pull-right">
+    class="list-group-item list-group-item-action flex-column align-items-start">
+    <article class="d-flex w-100 justify-content-between">
+        <h4 class="mb-1 col">{{ recipe.name }}</h4>
+    </article>
+
+    <article class="row">
+        <p class="mb-1 col">{{ recipe.description }}</p>
+
         <img
             [src]="recipe.imagePath"
             alt="{{ recipe.name }}"
             class="img-fluid"
             style="max-height: 50px;">
-    </span>
+    </article>
 </a>
