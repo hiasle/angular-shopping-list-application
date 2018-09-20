@@ -140,13 +140,13 @@
         "directive-selector": [
             true,
             "attribute",
-            "rdm",
+            "app",
             "camelCase"
         ],
         "component-selector": [
             true,
             "element",
-            "rdm",
+            "app",
             "kebab-case"
         ],
         "use-input-property-decorator": true,
@@ -164,7 +164,7 @@
         "pipe-naming": [
             true,
             "camelCase",
-            "rdm"
+            "app"
         ],
         "component-class-suffix": false,
         "directive-class-suffix": true,
