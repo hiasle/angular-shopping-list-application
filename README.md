@@ -1,6 +1,6 @@
 # Angular Shopping List Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0. and includes examples of Angular databinding usages.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.7 and includes examples of Angular databinding usages.
 
 ## Using project with Stackblitz
 
