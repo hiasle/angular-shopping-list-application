@@ -17,4 +17,16 @@ export class ShoppingListService {
         this.ingredients.push(ingredient);
         this.ingredientsChanged.emit(this.ingredients.slice());
     }
+
+    addIngredients(ingredients: Ingredient[]) {
+        // instead of using for loop
+        // for (let ingredient of ingredients) {
+        //     this.addIngredient(ingredient);
+        // }
+
+        // use ES6 spread operator
+        this.ingredients.push(...ingredients);
+
+        // TODO: beware of duplication of the same items in the shopping list with a method
+    }
 }

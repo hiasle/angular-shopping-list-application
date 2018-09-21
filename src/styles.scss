@@ -7,6 +7,6 @@
     margin-bottom: 25px;
 }
 
-.dropdown.open .dropdown-menu, .navbar-toggler.open ~ .collapse {
+.dropdown.open .dropdown-menu, .dropdown-toggle.open ~ .dropdown-menu, .navbar-toggler.open ~ .collapse {
     display: block;
 }

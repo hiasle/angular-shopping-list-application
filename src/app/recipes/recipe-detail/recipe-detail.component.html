@@ -1,38 +1,50 @@
 <div class="row">
-  <div class="col-xs-12">
-    <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-fluid">
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xs-12">
-    <h1>{{ recipe.name }}</h1>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xs-12">
-    <div class="btn-group" appDropdown>
-      <button
-        type="button"
-        class="btn btn-primary dropdown-toggle">
-        Manage Recipe <span class="caret"></span>
-      </button>
-
-      <ul class="dropdown-menu">
-        <li><a href="#">To Shopping List</a></li>
-        <li><a href="#">Edit Recipe</a></li>
-        <li><a href="#">Delete Recipe</a></li>
-      </ul>
+    <div class="col-xs-12">
+        <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-fluid">
     </div>
-  </div>
 </div>
 
 <div class="row">
-  <div class="col-xs-12">
-    {{ recipe.description }}
-  </div>
-  <div class="col-xs-12">
-    Ingredients
-  </div>
+    <div class="col-xs-12">
+        <h1>{{ recipe.name }}</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 margin-bottom-md">
+        <div class="btn-group">
+            <a
+                class="dropdown-toggle btn btn-primary"
+                href="#"
+                id="navbarDropdownRecipe"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                appDropdown>
+                Manage Recipe
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownRecipe">
+                <a class="dropdown-item cursor-pointer" (click)="addToShoppingList()">To Shopping List</a>
+                <a class="dropdown-item cursor-pointer" href="#">Edit Recipe</a>
+                <a class="dropdown-item cursor-pointer" href="#">Delete Recipe</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 margin-bottom-md">
+        {{ recipe.description }}
+    </div>
+    <div class="col-12">
+        <ul class="list-group">
+            <li
+                class="list-group-item"
+                *ngFor="let ingredient of recipe.ingredients">
+                {{ ingredient.name }} - {{ ingredient.amount }}
+            </li>
+        </ul>
+    </div>
 </div>
