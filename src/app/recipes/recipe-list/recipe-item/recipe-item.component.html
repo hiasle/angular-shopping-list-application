@@ -1,9 +1,9 @@
 <a
     href="#"
     (click)="onSelected()"
-    class="list-group-item list-group-item-action flex-column align-items-start">
+    class="list-group-item list-group-item-action flex-column align-items-start min-height-150">
     <article class="d-flex w-100 justify-content-between">
-        <h4 class="mb-1 col">{{ recipe.name }}</h4>
+        <h4 class="mb-1 col no-padding margin-bottom-md">{{ recipe.name }}</h4>
     </article>
 
     <article class="row">
@@ -12,7 +12,6 @@
         <img
             [src]="recipe.imagePath"
             alt="{{ recipe.name }}"
-            class="img-fluid mr-3"
-            style="max-height: 50px;">
+            class="img-fluid mr-3 max-height-50 margin-top-sm">
     </article>
 </a>
