@@ -33,6 +33,10 @@ export class RecipeService {
 
     constructor(private shoppingListService: ShoppingListService) {}
 
+    getRecipe(index: number) {
+        return this.recipes[index];
+    }
+
     getRecipes(): Recipe[] {
         return this.recipes.slice();
         // to prevent user reach recipes array from outside, only reachable copy of the array
