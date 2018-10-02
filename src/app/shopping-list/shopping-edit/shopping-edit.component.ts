@@ -8,7 +8,7 @@ import { Ingredient } from '../../recipes/shared/ingredient.model';
 @Component({
     selector: 'app-shopping-edit',
     templateUrl: './shopping-edit.component.html',
-    styleUrls: ['./shopping-edit.component.css'],
+    styleUrls: ['./shopping-edit.component.scss'],
 })
 export class ShoppingEditComponent implements OnInit, OnDestroy {
     @ViewChild('f')
