@@ -30,7 +30,7 @@
                         class="btn btn-success margin-right-sm"
                         type="submit"
                         [disabled]="!f.valid">
-                        Add
+                        {{ editMode ? 'Update' : 'Add' }}
                     </button>
 
                     <button
