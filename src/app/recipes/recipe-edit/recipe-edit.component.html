@@ -38,14 +38,18 @@
                             type="text"
                             class="form-control"
                             formControlName="imagePath"
-                            id="imgPath">
+                            id="imgPath"
+                            #imagePath>
                     </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                    <img src="" alt="" class="img-fluid">
+                    <img
+                        [src]="imagePath.value"
+                        alt=""
+                        class="img-fluid">
                 </div>
             </div>
 
