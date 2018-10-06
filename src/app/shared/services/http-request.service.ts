@@ -15,4 +15,8 @@ export class HttpRequestService {
             this.recipeService.getRecipes(),
         );
     }
+
+    getRecipes() {
+        return this.http.get('https://recipe-book-666.firebaseio.com/recipes.json');
+    }
 }
