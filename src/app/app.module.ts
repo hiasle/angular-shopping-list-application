@@ -22,6 +22,7 @@ import { HttpRequestService } from './shared/services/http-request.service';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth.service';
+import { AuthGuardService } from './auth/auth-guard.service';
 
 @NgModule({
     declarations: [
@@ -40,7 +41,13 @@ import { AuthService } from './auth/auth.service';
         SigninComponent,
     ],
     imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, AppRoutingModule],
-    providers: [ShoppingListService, RecipeService, HttpRequestService, AuthService],
+    providers: [
+        ShoppingListService,
+        RecipeService,
+        HttpRequestService,
+        AuthService,
+        AuthGuardService,
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule {}
