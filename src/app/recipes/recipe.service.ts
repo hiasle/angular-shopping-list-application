@@ -11,17 +11,6 @@ export class RecipeService {
 
     private recipes: Recipe[] = [
         new Recipe(
-            'Chicken Tenders',
-            'A crunchy chicken served with greens.',
-            '../assets/image/chicken-close-up-992043.jpg',
-            [
-                new Ingredient('Chicken Tenders', 1),
-                new Ingredient('Pane', 1),
-                new Ingredient('Lettuce', 1),
-                new Ingredient('Lemon', 1),
-            ],
-        ),
-        new Recipe(
             'Vegetarian Bowl',
             'Delicious vegetables as tasty as always.',
             '../assets/image/appetizer-background-cuisine-326281.jpg',
