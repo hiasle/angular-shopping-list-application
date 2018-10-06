@@ -3,6 +3,7 @@ import { HttpRequestService } from '../shared/services/http-request.service';
 import { Recipe } from '../recipes/recipe.model';
 import { RecipeService } from '../recipes/recipe.service';
 import { map } from 'rxjs/operators';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
     selector: 'app-header',
@@ -12,6 +13,7 @@ export class HeaderComponent {
     constructor(
         private httpRequestService: HttpRequestService,
         private recipeService: RecipeService,
+        public authService: AuthService,
     ) {}
 
     updateRecipeList() {
