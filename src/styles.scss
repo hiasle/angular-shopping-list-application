@@ -10,3 +10,10 @@
 .dropdown.open .dropdown-menu, .dropdown-toggle.open ~ .dropdown-menu, .navbar-toggler.open ~ .collapse {
     display: block;
 }
+
+@media (min-width: 320px) and (max-width: 781px) {
+    .hidden.mobile-seperator {
+        margin-top: 10px;
+        display: flex !important;
+    }
+}
