@@ -25,6 +25,12 @@ export class AuthService {
             .catch((error) => console.log(error.message));
     }
 
+    logout() {
+        firebase.auth().signOut();
+
+        this.token = null;
+    }
+
     getToken() {
         firebase
             .auth()

@@ -42,4 +42,8 @@ export class HeaderComponent {
                 this.recipeService.setRecipes(response);
             });
     }
+
+    onLogout() {
+        this.authService.logout();
+    }
 }
