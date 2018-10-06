@@ -11,8 +11,8 @@ export class RecipeService {
 
     private recipes: Recipe[] = [
         new Recipe(
-            'Fooled Chicken Tears',
-            'A poor chicken has been fooled correctly and gathered its tears as trophy.',
+            'Chicken Tenders',
+            'A crunchy chicken served with greens.',
             '../assets/image/chicken-close-up-992043.jpg',
             [
                 new Ingredient('Chicken Tenders', 1),
@@ -22,8 +22,8 @@ export class RecipeService {
             ],
         ),
         new Recipe(
-            'VegiVigi',
-            'The vegs as you know.',
+            'Vegetarian Bowl',
+            'Delicious vegetables as tasty as always.',
             '../assets/image/appetizer-background-cuisine-326281.jpg',
             [
                 new Ingredient('Rocket', 1),
