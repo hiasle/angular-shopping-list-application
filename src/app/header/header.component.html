@@ -24,23 +24,24 @@
         </ul>
 
         <ul class="navbar-nav">
-            <!--TODO: fetch and save data -->
-            <!--<li class="nav-item dropdown" appDropdown>-->
-                <!--<a-->
-                    <!--class="nav-link dropdown-toggle"-->
-                    <!--href="javascript:;"-->
-                    <!--id="navbarDropdown"-->
-                    <!--role="button"-->
-                    <!--data-toggle="dropdown"-->
-                    <!--aria-haspopup="true"-->
-                    <!--aria-expanded="false">-->
-                    <!--Manage-->
-                <!--</a>-->
-                <!--<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">-->
-                    <!--<a class="dropdown-item cursor-pointer">Save Data</a>-->
+            <li class="nav-item dropdown" appDropdown>
+                <a
+                    class="nav-link dropdown-toggle"
+                    href="javascript:;"
+                    id="navbarDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false">
+                    Manage
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a
+                        class="dropdown-item cursor-pointer"
+                        (click)="updateRecipeList()">Save Data</a>
                     <!--<a class="dropdown-item cursor-pointer">Fetch Data</a>-->
-                <!--</div>-->
-            <!--</li>-->
+                </div>
+            </li>
         </ul>
     </div>
 </nav>
