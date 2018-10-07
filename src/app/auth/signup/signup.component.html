@@ -1,8 +1,19 @@
 <section class="container">
     <article class="row justify-content-md-center">
+        <p class="col-md-12 help-block align-center margin-top-xlg font-14">I'm working on the email information of new
+            registrations. <br>Just enter your information and register, then you can Sign In to the app from Login page.
+        </p>
+
         <div class="col-md-5">
             <div class="card signup" id="signup">
-                <div class="card-header"><strong>Signup</strong></div>
+                <div class="card-header">
+                    <div class="col">
+                        <div class="row">
+                            <p class="icon-signup d-flex no-margin-bottom align-items-center"></p>
+                            <strong class="col padding-left-sm">Sign Up</strong>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="card-body">
                     <form (ngSubmit)="onSignup(f)" #f="ngForm">

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { NgForm } from '@angular/forms';
 
@@ -8,13 +8,39 @@ import { NgForm } from '@angular/forms';
     styleUrls: ['./signin.component.scss'],
 })
 export class SigninComponent implements OnInit {
+    @ViewChild('f')
+    signinForm: NgForm;
+
     constructor(private authService: AuthService) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.initializeFormValues();
+    }
 
-    onSignin(form: NgForm) {
-        const email = form.value.email;
-        const password = form.value.password;
+    initializeFormValues() {
+        const initialization = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                this.signinForm.form.setValue({
+                    userData: {
+                        email: 'test@test.com',
+                        password: 'testuser',
+                    },
+                });
+            }, 1000);
+        });
+
+        initialization
+            .then((result) => {
+                console.log(result);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+    onSignin() {
+        const email = this.signinForm.value.userData.email;
+        const password = this.signinForm.value.userData.password;
 
         this.authService.signinUser(email, password);
     }

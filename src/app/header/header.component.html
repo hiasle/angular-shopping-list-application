@@ -1,5 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light margin-bottom-lg">
-    <a routerLink="/" class="navbar-brand">Recipe Book</a>
+    <a
+        [routerLink]="authService.isAuthenticated() ? ['/'] : []"
+        class="navbar-brand">
+        <div class="row margin-right-lg">
+            <span class="icon-recipe d-flex no-margin-bottom margin-left-lg font-24"></span>
+            <span class="padding-left-sm">Recipe Book</span>
+        </div>
+    </a>
+
     <button
         class="navbar-toggler"
         type="button"
@@ -15,31 +23,26 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul
             class="navbar-nav mr-auto">
-            <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" routerLink="/recipes">Recipes</a>
-            </li>
+            <ng-template [ngIf]="authService.isAuthenticated()">
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" routerLink="/recipes">Recipes</a>
+                </li>
 
-            <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" routerLink="/shopping-list">Shopping List</a>
-            </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" routerLink="/shopping-list">Shopping List</a>
+                </li>
+            </ng-template>
         </ul>
 
         <ul class="navbar-nav">
             <ng-template [ngIf]="!authService.isAuthenticated()">
-                <li class="nav-item">
+                <li class="nav-item" routerLinkActive="active">
                     <a class="nav-link cursor-pointer" routerLink="/signup">Register</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" routerLinkActive="active">
                     <a class="nav-link cursor-pointer" routerLink="/signin">Login</a>
                 </li>
             </ng-template>
-
-            <li class="nav-item">
-                <a
-                    class="nav-link cursor-pointer"
-                    (click)="onLogout()"
-                    *ngIf="authService.isAuthenticated()">Logout</a>
-            </li>
 
             <li
                 class="nav-item dropdown"
@@ -64,6 +67,18 @@
                         class="dropdown-item cursor-pointer"
                         (click)="fetchRecipes()">Fetch Data</a>
                 </div>
+            </li>
+
+            <li
+                class="nav-item"
+                *ngIf="authService.isAuthenticated()">
+                <a
+                    class="nav-link cursor-pointer title-popover"
+                    (click)="onLogout()"
+                    *ngIf="authService.isAuthenticated()"
+                    title="Logout">
+                    <span class="icon-logout"></span>
+                </a>
             </li>
         </ul>
     </div>

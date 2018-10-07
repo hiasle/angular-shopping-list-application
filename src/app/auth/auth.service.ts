@@ -1,6 +1,6 @@
 import * as firebase from 'firebase';
 import { Router } from '@angular/router';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 
 @Injectable()
 export class AuthService {
@@ -19,15 +19,11 @@ export class AuthService {
         firebase
             .auth()
             .signInWithEmailAndPassword(email, password)
-            .then((response) => this.router.navigate(['/']));
-
-        firebase
-            .auth()
-            .currentUser.getIdToken()
-            .then((tokenResponse: string) => {
-                this.token = tokenResponse;
+            .then((response) => {
+                this.getToken();
+                // console.log('Authenticated: ', this.isAuthenticated());
             })
-            .catch((error) => console.log(error.message));
+            .catch((error) => console.log(error));
     }
 
     logout() {
@@ -42,6 +38,15 @@ export class AuthService {
             .currentUser.getIdToken()
             .then((tokenResponse: string) => {
                 this.token = tokenResponse;
+
+                this.router.navigate(['/']);
+            })
+            .catch((error) => {
+                if (error.status === 401) {
+                    this.router.navigate(['signin']);
+                } else {
+                    console.log(error.message);
+                }
             });
 
         return this.token;
