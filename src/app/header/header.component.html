@@ -22,7 +22,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul
-            class="navbar-nav mr-auto">
+            class="navbar-nav mr-auto mobile-margin-top-md">
             <ng-template [ngIf]="authService.isAuthenticated()">
                 <li class="nav-item" routerLinkActive="active">
                     <a class="nav-link" routerLink="/recipes">Recipes</a>
@@ -34,7 +34,7 @@
             </ng-template>
         </ul>
 
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mobile-margin-top-md">
             <ng-template [ngIf]="!authService.isAuthenticated()">
                 <li class="nav-item" routerLinkActive="active">
                     <a class="nav-link cursor-pointer" routerLink="/signup">Register</a>

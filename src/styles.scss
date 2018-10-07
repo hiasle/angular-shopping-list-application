@@ -16,4 +16,16 @@
         margin-top: 10px;
         display: flex !important;
     }
+
+    .mobile-margin-top-md {
+        margin-top: 10px;
+    }
+
+    .mobile-margin-bottom-xlg {
+        margin-bottom: 50px;
+    }
+
+    .active > .nav-link, .navbar-light .navbar-nav .nav-link {
+        padding: 10px;
+    }
 }
