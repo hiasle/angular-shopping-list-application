@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { HttpRequestService } from '../shared/services/http-request.service';
-import { Recipe } from '../recipes/recipe.model';
-import { RecipeService } from '../recipes/recipe.service';
+import { HttpRequestService } from '../../shared/services/http-request.service';
+import { Recipe } from '../../recipes/recipe.model';
+import { RecipeService } from '../../recipes/recipe.service';
 import { map } from 'rxjs/operators';
-import { AuthService } from '../auth/auth.service';
+import { AuthService } from '../../auth/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
