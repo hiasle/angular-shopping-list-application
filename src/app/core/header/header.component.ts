@@ -21,8 +21,9 @@ export class HeaderComponent {
 
     updateRecipeList() {
         this.httpRequestService.storeRecipes().subscribe(
-            (response: Recipe[]) => {
+            (response) => {
                 console.log('Stored Recipes', response);
+                this.router.navigate(['recipes']);
             },
             (error) => {
                 if (error.status === 401) {
@@ -36,7 +37,7 @@ export class HeaderComponent {
         this.httpRequestService
             .getRecipes()
             .pipe(
-                map((response: Recipe[]) => {
+                map((response) => {
                     const recipes = response;
 
                     for (let recipe of recipes) {
@@ -51,6 +52,7 @@ export class HeaderComponent {
             .subscribe(
                 (response: Recipe[]) => {
                     this.recipeService.setRecipes(response);
+                    this.router.navigate(['recipes']);
                 },
                 (error) => {
                     if (error.status === 401) {
