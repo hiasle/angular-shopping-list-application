@@ -1,6 +1,6 @@
-# Angular Shopping List Application
+# Angular 7 Shopping List Application
 
-Angular Shopping List Application authored by Osman Fikret Ceylan.
+Angular 7 Shopping List Application authored by Osman Fikret Ceylan.
 
 ## Usage
 
