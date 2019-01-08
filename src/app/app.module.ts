@@ -1,8 +1,10 @@
 ///<reference path="../../node_modules/@angular/common/http/src/client.d.ts"/>
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+
+import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
@@ -15,6 +17,7 @@ import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { shoppingListReducer } from './shopping-list/store/shopping-list.reducers';
 
 @NgModule({
     declarations: [AppComponent],
@@ -26,6 +29,9 @@ import { AuthInterceptor } from './auth/auth.interceptor';
         SharedModule,
         CoreModule,
         AuthModule,
+        StoreModule.forRoot({
+            shoppingList: shoppingListReducer,
+        }),
     ],
     providers: [
         ShoppingListService,
