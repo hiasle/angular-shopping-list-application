@@ -15,18 +15,6 @@ export class ShoppingListService {
         return this.ingredients[index];
     }
 
-    addIngredients(ingredients: Ingredient[]) {
-        // instead of using for loop
-        // for (let ingredient of ingredients) {
-        //     this.addIngredient(ingredient);
-        // }
-
-        // use ES6 spread operator
-        this.ingredients.push(...ingredients);
-
-        this.ingredientsChanged.next(this.ingredients.slice());
-    }
-
     updateIngredient(index: number, newIngredient: Ingredient) {
         this.ingredients[index] = newIngredient;
 

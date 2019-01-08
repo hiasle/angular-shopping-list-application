@@ -1,11 +1,8 @@
 import { Recipe } from './recipe.model';
-import { Injectable } from '@angular/core';
+
 import { Subject } from 'rxjs';
-
 import { Ingredient } from '../shared/ingredient.model';
-import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
-@Injectable()
 export class RecipeService {
     recipesChanged = new Subject<Recipe[]>();
 
@@ -22,7 +19,7 @@ export class RecipeService {
         ),
     ];
 
-    constructor(private shoppingListService: ShoppingListService) {}
+    constructor() {}
 
     setRecipes(recipes: Recipe[]) {
         this.recipes = recipes;
@@ -37,10 +34,6 @@ export class RecipeService {
     getRecipes(): Recipe[] {
         return this.recipes.slice();
         // to prevent user reach recipes array from outside, only reachable copy of the array
-    }
-
-    addIngredientsToShoppingList(ingredients: Ingredient[]) {
-        this.shoppingListService.addIngredients(ingredients);
     }
 
     addRecipe(recipe: Recipe) {
