@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
-import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from './recipes/recipe.service';
 import { HttpRequestService } from './shared/services/http-request.service';
 import { AuthService } from './auth/auth.service';
@@ -34,7 +33,6 @@ import { shoppingListReducer } from './shopping-list/store/shopping-list.reducer
         }),
     ],
     providers: [
-        ShoppingListService,
         RecipeService,
         HttpRequestService,
         AuthService,
