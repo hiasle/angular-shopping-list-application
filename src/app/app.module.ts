@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
@@ -17,6 +18,7 @@ import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { reducers } from './store/app.reducers';
+import { AuthEffects } from './auth/store/auth.effects';
 
 @NgModule({
     declarations: [AppComponent],
@@ -29,6 +31,7 @@ import { reducers } from './store/app.reducers';
         CoreModule,
         AuthModule,
         StoreModule.forRoot(reducers),
+        EffectsModule.forRoot([AuthEffects]),
     ],
     providers: [
         RecipeService,
