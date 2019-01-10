@@ -20,6 +20,7 @@ import { CoreModule } from './core/core.module';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { reducers } from './store/app.reducers';
 import { AuthEffects } from './auth/store/auth.effects';
+import { environment } from '../environments/environment';
 
 @NgModule({
     declarations: [AppComponent],
@@ -34,7 +35,7 @@ import { AuthEffects } from './auth/store/auth.effects';
         StoreModule.forRoot(reducers),
         EffectsModule.forRoot([AuthEffects]),
         StoreRouterConnectingModule,
-        StoreDevtoolsModule.instrument(),
+        !environment.production ? StoreDevtoolsModule.instrument() : [],
     ],
     providers: [
         RecipeService,
