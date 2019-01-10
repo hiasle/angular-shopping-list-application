@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
@@ -31,6 +32,7 @@ import { AuthEffects } from './auth/store/auth.effects';
         AuthModule,
         StoreModule.forRoot(reducers),
         EffectsModule.forRoot([AuthEffects]),
+        StoreRouterConnectingModule,
     ],
     providers: [
         RecipeService,
