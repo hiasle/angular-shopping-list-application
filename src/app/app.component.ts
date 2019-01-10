@@ -20,10 +20,6 @@ export class AppComponent implements OnInit {
             apiKey: 'AIzaSyAoylaSlAWFMNX6ZmNtXOreNzHO7UVjwH0',
             authDomain: 'recipe-book-666.firebaseapp.com',
         });
-
-        if (!this.authService.isAuthenticated()) {
-            this.router.navigate(['signin']);
-        }
     }
 
     public onNavigate(feature: string) {
