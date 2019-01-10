@@ -18,6 +18,22 @@ export class AuthService {
             .createUserWithEmailAndPassword(email, password)
             .then((user) => {
                 this.store.dispatch(new AuthActions.Signup());
+
+                firebase
+                    .auth()
+                    .currentUser.getIdToken()
+                    .then((tokenResponse: string) => {
+                        this.store.dispatch(new AuthActions.SetToken(tokenResponse));
+
+                        this.router.navigate(['/']);
+                    })
+                    .catch((error) => {
+                        if (error.status === 401) {
+                            this.router.navigate(['signin']);
+                        } else {
+                            console.log(error.message);
+                        }
+                    });
             })
             .catch((error) => console.log(error.message));
     }
