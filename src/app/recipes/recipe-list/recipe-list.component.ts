@@ -1,10 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
-import { AuthService } from '../../auth/auth.service';
+import * as fromApp from '../../store/app.reducers';
 
 @Component({
     selector: 'app-recipe-list',
@@ -17,9 +18,9 @@ export class RecipeListComponent implements OnInit, OnDestroy {
 
     constructor(
         private recipeService: RecipeService,
-        private authService: AuthService,
         private router: Router,
         private route: ActivatedRoute,
+        private store: Store<fromApp.AppState>,
     ) {}
 
     ngOnInit() {
@@ -31,12 +32,7 @@ export class RecipeListComponent implements OnInit, OnDestroy {
     }
 
     onNewRecipe() {
-        console.log('Authenticated: ', this.authService.isAuthenticated());
-        if (this.authService.isAuthenticated()) {
-            this.router.navigate(['new'], { relativeTo: this.route });
-        } else {
-            this.router.navigate(['/signin']);
-        }
+        this.router.navigate(['new'], { relativeTo: this.route });
     }
 
     ngOnDestroy() {

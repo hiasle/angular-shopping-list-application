@@ -11,7 +11,6 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { RecipeService } from './recipes/recipe.service';
 import { HttpRequestService } from './shared/services/http-request.service';
-import { AuthService } from './auth/auth.service';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { AuthModule } from './auth/auth.module';
@@ -36,7 +35,6 @@ import { AuthEffects } from './auth/store/auth.effects';
     providers: [
         RecipeService,
         HttpRequestService,
-        AuthService,
         AuthGuardService,
         {
             provide: HTTP_INTERCEPTORS,
