@@ -2,13 +2,15 @@ import { Action } from '@ngrx/store';
 
 import { Recipe } from '../recipe.model';
 
-export const SET_RECIPE = 'SET_RECIPES';
+export const SET_RECIPES = 'SET_RECIPES';
 export const ADD_RECIPE = 'ADD_RECIPE';
 export const UPDATE_RECIPE = 'UPDATE_RECIPE';
 export const DELETE_RECIPE = 'DELETE_RECIPE';
+export const STORE_RECIPES = 'STORE_RECIPES';
+export const FETCH_RECIPES = 'FETCH_RECIPES';
 
 export class SetRecipe implements Action {
-    readonly type = SET_RECIPE;
+    readonly type = SET_RECIPES;
 
     constructor(public payload: Recipe[]) {}
 }
@@ -31,4 +33,18 @@ export class DeleteRecipe implements Action {
     constructor(public payload: number) {}
 }
 
-export type RecipeActions = SetRecipe | AddRecipes | UpdateRecipes | DeleteRecipe;
+export class StoreRecipes implements Action {
+    readonly type = STORE_RECIPES;
+}
+
+export class FetchRecipes implements Action {
+    readonly type = FETCH_RECIPES;
+}
+
+export type RecipeActions =
+    | SetRecipe
+    | AddRecipes
+    | UpdateRecipes
+    | DeleteRecipe
+    | StoreRecipes
+    | FetchRecipes;
